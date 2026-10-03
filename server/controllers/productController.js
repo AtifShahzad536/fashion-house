@@ -122,20 +122,20 @@ export const getProductBySlugOrId = async (req, res, next) => {
 export const getCuratedCollections = async (req, res, next) => {
   try {
     let [featured, newArrivals, bestSellers, bridalCollection] = await Promise.all([
-      Product.find({ isFeatured: true }).populate('category', 'name slug').limit(16),
-      Product.find({ isNewArrival: true }).populate('category', 'name slug').limit(16),
-      Product.find({ isBestSeller: true }).populate('category', 'name slug').limit(16),
-      Product.find({ occasion: 'Bridal' }).populate('category', 'name slug').limit(16),
+      Product.find({ isFeatured: true }).populate('category', 'name slug').limit(24),
+      Product.find({ isNewArrival: true }).populate('category', 'name slug').limit(24),
+      Product.find({ isBestSeller: true }).populate('category', 'name slug').limit(24),
+      Product.find({ occasion: 'Bridal' }).populate('category', 'name slug').limit(24),
     ]);
 
-    if (newArrivals.length < 12) {
-      newArrivals = await Product.find({}).sort({ createdAt: -1 }).populate('category', 'name slug').limit(16);
+    if (newArrivals.length < 18) {
+      newArrivals = await Product.find({}).sort({ createdAt: -1 }).populate('category', 'name slug').limit(24);
     }
-    if (bestSellers.length < 8) {
-      bestSellers = await Product.find({}).sort({ rating: -1, createdAt: -1 }).populate('category', 'name slug').limit(16);
+    if (bestSellers.length < 12) {
+      bestSellers = await Product.find({}).sort({ rating: -1, createdAt: -1 }).populate('category', 'name slug').limit(24);
     }
-    if (featured.length < 8) {
-      featured = await Product.find({}).sort({ createdAt: -1 }).populate('category', 'name slug').limit(16);
+    if (featured.length < 12) {
+      featured = await Product.find({}).sort({ createdAt: -1 }).populate('category', 'name slug').limit(24);
     }
 
     res.json({
