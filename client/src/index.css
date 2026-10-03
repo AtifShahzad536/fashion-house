@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-ivory: #FDFBF7;
+    --color-cream: #F9FAFB;
+    --color-sand: #F3F4F6;
+    --color-gold: #991B1B;
+    --color-gold-hover: #7F1D1D;
+    --color-blush: #FDF2F4;
+    --color-dusty-rose: #E11D48;
+    --color-charcoal: #111827;
+    --color-border: #E5E7EB;
+    --radius-default: 6px;
+  }
+
+  * {
+    border-color: #E5E7EB;
+  }
+
+  html {
+    scroll-behavior: initial;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    background-color: var(--color-ivory);
+    color: var(--color-charcoal);
+    overflow-x: hidden;
+  }
+}
+
+/* Custom Luxury Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F9FAFB;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D1D5DB;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #991B1B;
+}
+
+/* Swiper Custom Styling for Bridal Atelier */
+.swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background: #D1D5DB;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+}
+
+.swiper-pagination-bullet-active {
+  width: 28px;
+  background: #991B1B !important;
+  opacity: 1;
+  border-radius: 4px;
+}
+
+/* Glassmorphism utility */
+.glass-luxury {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(229, 231, 235, 0.8);
+}
+
+.glass-dark {
+  background: rgba(17, 24, 39, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Luxury button ripple & shimmer effects */
+.btn-gold {
+  background-color: #111827;
+  color: #FFFFFF;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 6px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+.btn-gold:hover {
+  background-color: #991B1B;
+  box-shadow: 0 4px 16px rgba(153, 27, 27, 0.3);
+  transform: translateY(-1px);
+}
+
+.btn-outline-gold {
+  border: 1px solid #111827;
+  color: #111827;
+  background: transparent;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.btn-outline-gold:hover {
+  background-color: #111827;
+  color: #FFFFFF;
+}
+
+/* Luxury image wrapper */
+.img-luxury-wrap {
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.img-luxury-wrap img {
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.img-luxury-wrap:hover img {
+  transform: scale(1.04);
+}
