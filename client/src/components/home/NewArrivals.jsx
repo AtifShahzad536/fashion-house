@@ -10,8 +10,7 @@ import 'swiper/css/navigation';
 
 export default function NewArrivals({ products = [] }) {
   const [activeTab, setActiveTab] = useState('All');
-  const swiperRef1 = useRef(null);
-  const swiperRef2 = useRef(null);
+  const swiperRef = useRef(null);
 
   const tabs = ['All', 'Bridal', 'Walima', 'Mehndi'];
 
@@ -19,35 +18,12 @@ export default function NewArrivals({ products = [] }) {
     ? products
     : products.filter(p => p.occasion === activeTab);
 
-  // Split into 2 rows: alternating items for visual diversity across categories
-  const row1Products = [];
-  const row2Products = [];
-
-  if (filteredProducts.length <= 4) {
-    row1Products.push(...filteredProducts);
-    row2Products.push(...filteredProducts);
-  } else {
-    filteredProducts.forEach((prod, index) => {
-      if (index % 2 === 0) {
-        row1Products.push(prod);
-      } else {
-        row2Products.push(prod);
-      }
-    });
-    // Ensure both rows have at least equal balance
-    if (row2Products.length === 0) {
-      row2Products.push(...row1Products);
-    }
-  }
-
   const handlePrev = () => {
-    swiperRef1.current?.slidePrev();
-    swiperRef2.current?.slidePrev();
+    swiperRef.current?.slidePrev();
   };
 
   const handleNext = () => {
-    swiperRef1.current?.slideNext();
-    swiperRef2.current?.slideNext();
+    swiperRef.current?.slideNext();
   };
 
   return (
@@ -103,56 +79,29 @@ export default function NewArrivals({ products = [] }) {
           </div>
         </div>
 
-        {/* Double Row Slider */}
+        {/* Products Carousel (4 Cards per Row on Desktop, 2 on Mobile) */}
         {filteredProducts.length > 0 ? (
-          <div className="space-y-4 sm:space-y-6">
-            {/* Row 1 Slider */}
-            <div className="relative">
-              <Swiper
-                modules={[Navigation]}
-                spaceBetween={12}
-                slidesPerView={2}
-                onSwiper={(swiper) => (swiperRef1.current = swiper)}
-                breakpoints={{
-                  0: { slidesPerView: 2, spaceBetween: 10 },
-                  480: { slidesPerView: 2, spaceBetween: 12 },
-                  640: { slidesPerView: 2, spaceBetween: 16 },
-                  768: { slidesPerView: 3, spaceBetween: 20 },
-                  1024: { slidesPerView: 4, spaceBetween: 24 },
-                }}
-                className="pb-2"
-              >
-                {row1Products.map((product, idx) => (
-                  <SwiperSlide key={`row1-${product._id || idx}`}>
-                    <ProductCard product={product} />
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-            </div>
-
-            {/* Row 2 Slider */}
-            <div className="relative">
-              <Swiper
-                modules={[Navigation]}
-                spaceBetween={12}
-                slidesPerView={2}
-                onSwiper={(swiper) => (swiperRef2.current = swiper)}
-                breakpoints={{
-                  0: { slidesPerView: 2, spaceBetween: 10 },
-                  480: { slidesPerView: 2, spaceBetween: 12 },
-                  640: { slidesPerView: 2, spaceBetween: 16 },
-                  768: { slidesPerView: 3, spaceBetween: 20 },
-                  1024: { slidesPerView: 4, spaceBetween: 24 },
-                }}
-                className="pb-2"
-              >
-                {row2Products.map((product, idx) => (
-                  <SwiperSlide key={`row2-${product._id || idx}`}>
-                    <ProductCard product={product} />
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-            </div>
+          <div className="relative">
+            <Swiper
+              modules={[Navigation, Pagination]}
+              spaceBetween={20}
+              slidesPerView={2}
+              onSwiper={(swiper) => (swiperRef.current = swiper)}
+              breakpoints={{
+                0: { slidesPerView: 2, spaceBetween: 10 },
+                480: { slidesPerView: 2, spaceBetween: 12 },
+                640: { slidesPerView: 2, spaceBetween: 16 },
+                768: { slidesPerView: 3, spaceBetween: 20 },
+                1024: { slidesPerView: 4, spaceBetween: 24 },
+              }}
+              className="pb-2"
+            >
+              {filteredProducts.map((product, idx) => (
+                <SwiperSlide key={product._id || idx} className="h-auto">
+                  <ProductCard product={product} />
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
         ) : (
           <div className="py-16 text-center text-bridal-mutedText text-sm">
