@@ -109,10 +109,22 @@ export const getSocialLinks = async (req, res, next) => {
         { platform: 'pinterest', title: 'Bridal Moodboard', url: 'https://pinterest.com/zurielleatelier', order: 4, isActive: true },
         { platform: 'tiktok', title: 'TikTok Runway', url: 'https://tiktok.com/@zurielleatelier', order: 5, isActive: true },
       ];
+      await SocialLink.deleteMany({});
       links = await SocialLink.insertMany(defaults);
     }
 
-    res.json({ success: true, data: links });
+    // Deduplicate by platform
+    const seen = new Set();
+    const uniqueLinks = [];
+    for (const link of links) {
+      const key = (link.platform || '').toLowerCase().trim();
+      if (!seen.has(key)) {
+        seen.add(key);
+        uniqueLinks.push(link);
+      }
+    }
+
+    res.json({ success: true, data: uniqueLinks });
   } catch (error) {
     next(error);
   }
@@ -129,9 +141,22 @@ export const getAllSocialLinksAdmin = async (req, res, next) => {
         { platform: 'pinterest', title: 'Bridal Moodboard', url: 'https://pinterest.com/zurielleatelier', order: 4, isActive: true },
         { platform: 'tiktok', title: 'TikTok Runway', url: 'https://tiktok.com/@zurielleatelier', order: 5, isActive: true },
       ];
+      await SocialLink.deleteMany({});
       links = await SocialLink.insertMany(defaults);
     }
-    res.json({ success: true, data: links });
+
+    // Deduplicate by platform
+    const seen = new Set();
+    const uniqueLinks = [];
+    for (const link of links) {
+      const key = (link.platform || '').toLowerCase().trim();
+      if (!seen.has(key)) {
+        seen.add(key);
+        uniqueLinks.push(link);
+      }
+    }
+
+    res.json({ success: true, data: uniqueLinks });
   } catch (error) {
     next(error);
   }

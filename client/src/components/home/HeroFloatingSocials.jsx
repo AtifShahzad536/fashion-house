@@ -40,7 +40,18 @@ export default function HeroFloatingSocials() {
       try {
         const { data } = await api.get('/cms/social-links');
         if (data.success && data.data) {
-          setLinks(data.data.filter((item) => item.isActive));
+          const active = data.data.filter((item) => item.isActive);
+          // Deduplicate by platform to prevent any repeated icons
+          const seen = new Set();
+          const unique = [];
+          for (const item of active) {
+            const plat = (item.platform || item.title || '').toLowerCase().trim();
+            if (!seen.has(plat)) {
+              seen.add(plat);
+              unique.push(item);
+            }
+          }
+          setLinks(unique);
         }
       } catch (err) {
         console.error('Error fetching hero social links:', err);
