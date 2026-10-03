@@ -33,8 +33,8 @@ const importData = async () => {
 
     console.log('👑 Seeding Users (Admin & Customer)...');
     const adminUser = await User.create({
-      name: 'Zurielle Atelier Admin',
-      email: 'admin@zurielle.com',
+      name: 'Fashion House Sialkot Admin',
+      email: 'admin@fashionhouse.com',
       password: 'admin12345password',
       role: 'admin',
       phone: '+92 300 1234567',
@@ -98,10 +98,10 @@ const importData = async () => {
     await Coupon.insertMany(couponsData);
 
     console.log('\n========================================');
-    console.log('🎉 ROYAL ATELIER DATABASE SEEDED SUCCESSFULLY!');
+    console.log('🎉 FASHION HOUSE SIALKOT DATABASE SEEDED SUCCESSFULLY! (22 Products)');
     console.log('========================================');
     console.log('🔑 Admin Credentials:');
-    console.log('   Email:    admin@zurielle.com');
+    console.log('   Email:    admin@fashionhouse.com');
     console.log('   Password: admin12345password');
     console.log('----------------------------------------');
     console.log('👤 Customer Credentials:');

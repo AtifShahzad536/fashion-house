@@ -180,10 +180,10 @@ export default function Navbar() {
           {/* Center: Brand Luxury Logo */}
           <div className="text-center">
             <Link to="/" className="inline-block group" onClick={() => setActiveMenu(null)}>
-              <span className="font-serif text-base sm:text-lg lg:text-xl tracking-[0.12em] text-[#111827] font-bold block transition group-hover:text-[#991B1B] whitespace-nowrap leading-tight">
+              <span className="font-serif text-[13px] sm:text-base lg:text-lg tracking-[0.08em] sm:tracking-[0.12em] text-[#111827] font-bold block transition group-hover:text-[#991B1B] whitespace-nowrap leading-tight">
                 FASHION HOUSE
               </span>
-              <span className="text-[8px] sm:text-[8.5px] tracking-[0.25em] text-[#991B1B] font-semibold uppercase block mt-0.5">
+              <span className="text-[7px] sm:text-[8.5px] tracking-[0.18em] sm:tracking-[0.25em] text-[#991B1B] font-semibold uppercase block mt-0.5">
                 Sialkot Couture
               </span>
             </Link>
