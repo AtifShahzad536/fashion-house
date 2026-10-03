@@ -143,7 +143,7 @@ export default function AccountPage() {
   return (
     <>
       <Helmet>
-        <title>VIP Bridal Account & Trousseau Portal | ZURIELLE ATELIER</title>
+        <title>My Bridal Account | ZURIELLE ATELIER</title>
       </Helmet>
 
       <div className="bg-bridal-ivory min-h-screen pb-24">
@@ -157,8 +157,8 @@ export default function AccountPage() {
                 className="w-14 h-14 rounded-full object-cover border-2 border-bridal-gold"
               />
               <div>
-                <span className="text-[10px] uppercase font-bold tracking-[0.25em] text-bridal-gold block">
-                  VIP Atelier Member
+                <span className="text-[10px] uppercase font-bold tracking-[0.25em] text-[#991B1B] block">
+                  Bridal Client Account
                 </span>
                 <h1 className="font-serif text-2xl text-bridal-charcoal font-semibold">
                   {userInfo?.name}

@@ -270,7 +270,7 @@ export default function Navbar() {
                         <p className="font-semibold text-[#111827] truncate">{userInfo.name}</p>
                         <p className="text-[11px] text-gray-500 truncate">{userInfo.email}</p>
                         <span className="inline-block mt-1 px-1.5 py-0.5 bg-[#991B1B]/10 text-[#991B1B] text-[10px] font-semibold rounded-[4px]">
-                          {userInfo.role === 'admin' ? 'Atelier Administrator' : 'VIP Bridal Client'}
+                          {userInfo.role === 'admin' ? 'Atelier Administrator' : 'Bridal Client'}
                         </span>
                       </div>
 
