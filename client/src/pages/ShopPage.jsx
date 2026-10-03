@@ -117,15 +117,15 @@ export default function ShopPage() {
     (selectedSize ? 1 : 0) +
     (priceRange < 600000 ? 1 : 0);
 
-  // Dynamic grid classes based on chosen column layout
+  // Dynamic grid classes based on chosen column layout (2 columns on mobile)
   const getGridColsClass = () => {
     if (columns === 4) {
-      return 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5';
+      return 'grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2.5 sm:gap-3.5';
     }
     if (columns === 3) {
-      return 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5';
+      return 'grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-2.5 sm:gap-5';
     }
-    return 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6';
+    return 'grid-cols-2 sm:grid-cols-2 lg:grid-cols-2 gap-3 sm:gap-6';
   };
 
   return (
@@ -403,7 +403,7 @@ export default function ShopPage() {
                 <div className="py-20 text-center bg-white border border-gray-200 rounded-[4px] p-8 space-y-4">
                   <h3 className="font-serif text-xl text-[#111827]">No Haute Couture Pieces Match Your Criteria</h3>
                   <p className="text-xs text-gray-500 max-w-md mx-auto">
-                    Try adjusting your filters, selecting a different occasion or fabric family, or contact our VIP concierge team for bespoke consultations.
+                    Try adjusting your filters, selecting a different occasion or fabric family, or contact our atelier concierge team for bespoke consultations.
                   </p>
                   <button
                     onClick={handleResetFilters}

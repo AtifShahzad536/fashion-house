@@ -105,14 +105,14 @@ export default function ProductCard({ product, compact = false }) {
         </Link>
 
         {/* Badges */}
-        <div className="absolute top-2.5 left-2.5 flex flex-col gap-1 pointer-events-none">
+        <div className="absolute top-2 left-2 sm:top-2.5 sm:left-2.5 flex flex-col gap-1 pointer-events-none">
           {product.salePrice && (
-            <span className={`bg-[#991B1B] text-white ${compact ? 'text-[9px] px-1.5 py-0.5' : 'text-[10px] px-2.5 py-0.5'} uppercase font-bold rounded-[4px] tracking-wider shadow-sm animate-pulse`}>
+            <span className="bg-[#991B1B] text-white text-[8.5px] sm:text-[10px] px-1.5 py-0.5 sm:px-2.5 uppercase font-bold rounded-[4px] tracking-wider shadow-sm animate-pulse">
               {Math.round(((product.price - product.salePrice) / product.price) * 100)}% OFF
             </span>
           )}
           {product.isNewArrival && !product.salePrice && (
-            <span className={`bg-[#111827] text-white ${compact ? 'text-[9px] px-1.5 py-0.5' : 'text-[10px] px-2.5 py-0.5'} uppercase font-semibold rounded-[4px] tracking-wider`}>
+            <span className="bg-[#111827] text-white text-[8.5px] sm:text-[10px] px-1.5 py-0.5 sm:px-2.5 uppercase font-semibold rounded-[4px] tracking-wider">
               New
             </span>
           )}
@@ -121,67 +121,67 @@ export default function ProductCard({ product, compact = false }) {
         {/* Wishlist Button */}
         <button
           onClick={handleWishlistToggle}
-          className={`absolute top-2.5 right-2.5 ${compact ? 'p-1.5' : 'p-2'} rounded-full backdrop-blur-md transition-all duration-200 ${
+          className={`absolute top-2 right-2 sm:top-2.5 sm:right-2.5 p-1.5 sm:p-2 rounded-full backdrop-blur-md transition-all duration-200 ${
             isWishlisted
-              ? 'bg-[#111827] text-red-500 scale-110 shadow-md'
+              ? 'bg-[#111827] text-red-500 scale-105 sm:scale-110 shadow-md'
               : 'bg-white/90 text-[#111827] hover:bg-[#111827] hover:text-white'
           }`}
           aria-label="Toggle Wishlist"
         >
-          <Heart size={compact ? 14 : 16} fill={isWishlisted ? 'currentColor' : 'none'} />
+          <Heart className="w-3.5 h-3.5 sm:w-4 sm:h-4" fill={isWishlisted ? 'currentColor' : 'none'} />
         </button>
 
-        {/* Bottom Hover Action Overlay */}
-        <div className="absolute inset-x-2.5 bottom-2.5 flex gap-1.5 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+        {/* Bottom Hover Action Overlay (Desktop) */}
+        <div className="hidden sm:flex absolute inset-x-2.5 bottom-2.5 gap-1.5 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
           <button
             onClick={handleQuickAdd}
-            className={`flex-1 ${compact ? 'py-1.5 text-[10px]' : 'py-2.5 text-[11px]'} bg-[#111827] hover:bg-[#991B1B] text-white font-semibold uppercase tracking-wider rounded-[4px] backdrop-blur-md flex items-center justify-center gap-1 transition`}
+            className="flex-1 py-2 sm:py-2.5 text-[10px] sm:text-[11px] bg-[#111827] hover:bg-[#991B1B] text-white font-semibold uppercase tracking-wider rounded-[4px] backdrop-blur-md flex items-center justify-center gap-1 transition"
           >
-            <ShoppingBag size={compact ? 12 : 13} />
-            <span>{compact ? 'Add' : 'Add to Bag'}</span>
+            <ShoppingBag size={13} />
+            <span>Add to Bag</span>
           </button>
           <button
             onClick={handleQuickView}
-            className={`${compact ? 'p-1.5' : 'p-2.5'} bg-white/90 hover:bg-white text-[#111827] rounded-[4px] backdrop-blur-md transition`}
+            className="p-2 sm:p-2.5 bg-white/90 hover:bg-white text-[#111827] rounded-[4px] backdrop-blur-md transition"
             title="Quick View"
           >
-            <Eye size={compact ? 13 : 15} />
+            <Eye size={15} />
           </button>
         </div>
       </div>
 
       {/* Product Information */}
-      <div className={`${compact ? 'p-3' : 'p-4'} flex-1 flex flex-col justify-between space-y-2`}>
+      <div className="p-2.5 sm:p-4 flex-1 flex flex-col justify-between space-y-1.5 sm:space-y-2">
         <div>
-          <div className={`flex items-center justify-between ${compact ? 'text-[10px]' : 'text-[11px]'} text-[#991B1B] uppercase tracking-wider font-semibold`}>
-            <span>{product.occasion || 'Bridal Couture'}</span>
+          <div className="flex items-center justify-between text-[9px] sm:text-[11px] text-[#991B1B] uppercase tracking-wider font-semibold">
+            <span className="truncate">{product.occasion || 'Bridal Couture'}</span>
           </div>
 
           <Link to={`/product/${product.slug}`}>
-            <h3 className={`${compact ? 'text-xs' : 'text-sm'} font-medium text-bridal-charcoal line-clamp-1 group-hover:text-[#991B1B] transition mt-1`}>
+            <h3 className="text-xs sm:text-sm font-medium text-bridal-charcoal line-clamp-1 group-hover:text-[#991B1B] transition mt-0.5 sm:mt-1">
               {product.name}
             </h3>
           </Link>
 
-          <p className={`${compact ? 'text-[10px]' : 'text-[11px]'} text-bridal-mutedText line-clamp-1 mt-0.5`}>
+          <p className="text-[9px] sm:text-[11px] text-bridal-mutedText line-clamp-1 mt-0.5">
             {product.fabric || 'Pure Raw Silk'}
           </p>
         </div>
 
         {/* Pricing & View Details CTA */}
-        <div className="pt-2 border-t border-bridal-border/60 flex items-center justify-between gap-1.5">
+        <div className="pt-1.5 sm:pt-2 border-t border-bridal-border/60 flex items-center justify-between gap-1">
           <div className="min-w-0 flex flex-col justify-center">
             {product.salePrice ? (
               <div className="flex flex-col">
-                <span className={`${compact ? 'text-xs' : 'text-[13px] sm:text-sm'} font-bold text-[#991B1B] leading-tight whitespace-nowrap`}>
+                <span className="text-[11px] sm:text-[13px] md:text-sm font-bold text-[#991B1B] leading-tight whitespace-nowrap">
                   {formatPrice(product.salePrice)}
                 </span>
-                <span className={`${compact ? 'text-[10px]' : 'text-[11px]'} text-gray-400 line-through leading-tight whitespace-nowrap mt-0.5`}>
+                <span className="text-[9px] sm:text-[11px] text-gray-400 line-through leading-tight whitespace-nowrap">
                   {formatPrice(product.price)}
                 </span>
               </div>
             ) : (
-              <span className={`${compact ? 'text-xs' : 'text-[13px] sm:text-sm'} font-semibold text-bridal-charcoal leading-tight whitespace-nowrap`}>
+              <span className="text-[11px] sm:text-[13px] md:text-sm font-semibold text-bridal-charcoal leading-tight whitespace-nowrap">
                 {formatPrice(product.price)}
               </span>
             )}
@@ -189,12 +189,10 @@ export default function ProductCard({ product, compact = false }) {
 
           <Link
             to={`/product/${product.slug}`}
-            className={`flex-shrink-0 whitespace-nowrap ${
-              compact ? 'px-2 py-1 text-[9px]' : 'px-2.5 sm:px-3 py-1.5 text-[10px]'
-            } bg-[#111827] hover:bg-[#991B1B] text-white font-semibold uppercase tracking-wider rounded-[4px] transition shadow-sm inline-flex items-center gap-1`}
+            className="flex-shrink-0 whitespace-nowrap px-2 sm:px-3 py-1 sm:py-1.5 text-[9px] sm:text-[10px] bg-[#111827] hover:bg-[#991B1B] text-white font-semibold uppercase tracking-wider rounded-[4px] transition shadow-sm inline-flex items-center gap-0.5 sm:gap-1"
           >
-            <span>{compact ? 'Details' : 'View Details'}</span>
-            <span className="text-xs leading-none">&rarr;</span>
+            <span>View</span>
+            <span className="text-[10px] sm:text-xs leading-none">&rarr;</span>
           </Link>
         </div>
       </div>

@@ -105,17 +105,20 @@ export default function NewArrivals({ products = [] }) {
 
         {/* Double Row Slider */}
         {filteredProducts.length > 0 ? (
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-6">
             {/* Row 1 Slider */}
             <div className="relative">
               <Swiper
                 modules={[Navigation]}
-                spaceBetween={24}
-                slidesPerView={1}
+                spaceBetween={12}
+                slidesPerView={2}
                 onSwiper={(swiper) => (swiperRef1.current = swiper)}
                 breakpoints={{
-                  640: { slidesPerView: 2 },
-                  1024: { slidesPerView: 4 },
+                  0: { slidesPerView: 2, spaceBetween: 10 },
+                  480: { slidesPerView: 2, spaceBetween: 12 },
+                  640: { slidesPerView: 2, spaceBetween: 16 },
+                  768: { slidesPerView: 3, spaceBetween: 20 },
+                  1024: { slidesPerView: 4, spaceBetween: 24 },
                 }}
                 className="pb-2"
               >
@@ -131,12 +134,15 @@ export default function NewArrivals({ products = [] }) {
             <div className="relative">
               <Swiper
                 modules={[Navigation]}
-                spaceBetween={24}
-                slidesPerView={1}
+                spaceBetween={12}
+                slidesPerView={2}
                 onSwiper={(swiper) => (swiperRef2.current = swiper)}
                 breakpoints={{
-                  640: { slidesPerView: 2 },
-                  1024: { slidesPerView: 4 },
+                  0: { slidesPerView: 2, spaceBetween: 10 },
+                  480: { slidesPerView: 2, spaceBetween: 12 },
+                  640: { slidesPerView: 2, spaceBetween: 16 },
+                  768: { slidesPerView: 3, spaceBetween: 20 },
+                  1024: { slidesPerView: 4, spaceBetween: 24 },
                 }}
                 className="pb-2"
               >

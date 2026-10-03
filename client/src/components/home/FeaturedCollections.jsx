@@ -59,12 +59,12 @@ export default function FeaturedCollections() {
         </div>
 
         {/* Collections Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 gap-3 sm:gap-4">
           {collections.map((item, idx) => (
             <Link
               key={idx}
               to={item.link}
-              className="group relative h-96 sm:h-[420px] rounded-[4px] overflow-hidden bg-bridal-charcoal border border-bridal-border block transition-all duration-300 hover:shadow-luxury-lg hover:border-[#991B1B]"
+              className="group relative h-64 sm:h-[420px] rounded-[4px] overflow-hidden bg-bridal-charcoal border border-bridal-border block transition-all duration-300 hover:shadow-luxury-lg hover:border-[#991B1B]"
             >
               {/* Image */}
               <img

@@ -192,7 +192,7 @@ export default function SocialGallery() {
         </div>
 
         {/* Pinterest Masonry Layout */}
-        <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
+        <div className="columns-2 sm:columns-2 md:columns-3 lg:columns-4 gap-3 sm:gap-4 space-y-3 sm:space-y-4">
           {filteredPins.map((pin) => {
             const isSaved = !!savedPins[pin.id];
             const isLiked = !!likedPins[pin.id];
