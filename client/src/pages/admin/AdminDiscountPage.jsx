@@ -168,33 +168,33 @@ export default function AdminDiscountPage() {
         </label>
 
         <div
-          style={{ backgroundColor: formData.bgColor }}
-          className="p-4 sm:p-5 rounded-[6px] border border-rose-200 shadow-sm"
+          style={{ backgroundColor: formData.bgColor || '#FAF5F5' }}
+          className="p-3.5 sm:p-4 rounded-[4px] border border-rose-200 shadow-sm"
         >
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-4 text-center sm:text-left">
-              <div className="w-14 h-14 rounded-full border-2 border-[#991B1B] bg-white flex flex-col items-center justify-center text-[#991B1B] font-bold text-xs shadow-sm flex-shrink-0">
-                <span className="font-black leading-none">{formData.discountPercent}%</span>
-                <span className="text-[9px] uppercase tracking-wider mt-0.5 font-semibold">OFF</span>
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-6">
+            <div className="flex items-center gap-3 sm:gap-4 text-left w-full sm:w-auto">
+              <div className="w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-gradient-to-br from-[#991B1B] to-[#7F1D1D] text-white flex flex-col items-center justify-center shadow-md border border-white/80 ring-2 ring-[#991B1B]/20 flex-shrink-0">
+                <span className="font-serif font-bold text-xs sm:text-sm leading-none">{formData.discountPercent}%</span>
+                <span className="text-[7.5px] sm:text-[8.5px] uppercase tracking-widest font-semibold mt-0.5 text-rose-100">OFF</span>
               </div>
-              <div>
-                <div className="flex items-center gap-2">
-                  <h3 className="font-serif text-lg font-bold text-[#111827] uppercase">
+              <div className="min-w-0 flex-1">
+                <div className="flex items-center gap-2 flex-wrap">
+                  <h3 className="font-serif text-sm sm:text-base font-bold text-[#111827] uppercase leading-tight">
                     {formData.title || 'FLAT 40% OFF'}
                   </h3>
                   {formData.targetType === 'occasions' && formData.targetOccasions.length > 0 && (
-                    <span className="px-2 py-0.5 bg-[#991B1B]/10 text-[#991B1B] text-[10px] font-bold uppercase rounded-[4px]">
+                    <span className="px-2 py-0.5 bg-[#991B1B]/10 text-[#991B1B] text-[9px] sm:text-[10px] font-bold uppercase rounded-[4px]">
                       {formData.targetOccasions.join(', ')}
                     </span>
                   )}
                 </div>
-                <p className="text-xs text-gray-700 font-medium mt-0.5">
+                <p className="text-[11px] sm:text-xs text-gray-600 font-normal mt-0.5">
                   {formData.subtitle || 'Enjoy flat discount on all handcrafted bridal and formal pieces.'}
                 </p>
               </div>
             </div>
 
-            <div className="px-6 py-2.5 bg-[#991B1B] text-white text-xs font-semibold uppercase tracking-wider rounded-[6px] shadow-sm flex items-center gap-1.5 pointer-events-none">
+            <div className="px-5 sm:px-6 py-2 bg-[#111827] text-white text-[11px] sm:text-xs font-semibold uppercase tracking-wider rounded-[4px] shadow-sm flex items-center gap-1.5 pointer-events-none flex-shrink-0">
               <span>{formData.buttonText || 'Shop Now'}</span>
               <ArrowRight size={13} />
             </div>
