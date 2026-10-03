@@ -128,13 +128,13 @@ export const getCuratedCollections = async (req, res, next) => {
       Product.find({ occasion: 'Bridal' }).populate('category', 'name slug').limit(16),
     ]);
 
-    if (newArrivals.length < 8) {
+    if (newArrivals.length < 12) {
       newArrivals = await Product.find({}).sort({ createdAt: -1 }).populate('category', 'name slug').limit(16);
     }
-    if (bestSellers.length < 6) {
+    if (bestSellers.length < 8) {
       bestSellers = await Product.find({}).sort({ rating: -1, createdAt: -1 }).populate('category', 'name slug').limit(16);
     }
-    if (featured.length < 6) {
+    if (featured.length < 8) {
       featured = await Product.find({}).sort({ createdAt: -1 }).populate('category', 'name slug').limit(16);
     }
 
