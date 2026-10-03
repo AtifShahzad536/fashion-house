@@ -128,7 +128,7 @@ export default function ProductDetailPage() {
     if (navigator.share) {
       navigator.share({
         title: product.name,
-        text: `Look at this breathtaking bridal lehenga from Zurielle Atelier: ${product.name}`,
+        text: `Look at this breathtaking bridal lehenga from Fashion House Sialkot: ${product.name}`,
         url: window.location.href,
       });
     } else {
@@ -162,7 +162,7 @@ export default function ProductDetailPage() {
   return (
     <>
       <Helmet>
-        <title>{product.name} | ZURIELLE ATELIER</title>
+        <title>{product.name} | Fashion House Sialkot</title>
         <meta name="description" content={product.shortDescription || product.description} />
       </Helmet>
 

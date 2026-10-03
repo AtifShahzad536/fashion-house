@@ -131,10 +131,10 @@ export default function ShopPage() {
   return (
     <>
       <Helmet>
-        <title>Haute Couture Bridal Lehengas & Collections | ZURIELLE ATELIER</title>
+        <title>Haute Couture Bridal Lehengas & Collections | Fashion House Sialkot</title>
         <meta
           name="description"
-          content="Browse our complete catalog of handcrafted Pakistani bridal lehengas, Walima gowns, and Mehndi kalidars tailored in pure silk, velvet, and zardozi."
+          content="Browse our complete catalog of handcrafted Pakistani bridal lehengas, Walima gowns, and Mehndi kalidars by Fashion House Sialkot."
         />
       </Helmet>
 

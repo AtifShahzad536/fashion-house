@@ -49,10 +49,10 @@ export default function LoginPage() {
   return (
     <>
       <Helmet>
-        <title>Sign In | ZURIELLE ATELIER</title>
+        <title>Sign In | Fashion House Sialkot</title>
         <meta
           name="description"
-          content="Sign in to your Zurielle Atelier account to manage bespoke orders, saved custom designs, and fitting measurements."
+          content="Sign in to your Fashion House Sialkot account to manage bespoke orders, saved custom designs, and fitting measurements."
         />
       </Helmet>
 
@@ -66,7 +66,7 @@ export default function LoginPage() {
             <div className="absolute inset-0 z-0">
               <img
                 src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?auto=format&fit=crop&w=1200&q=85"
-                alt="Zurielle Bridal Couture"
+                alt="Fashion House Sialkot Bridal Couture"
                 className="w-full h-full object-cover object-center opacity-45 filter brightness-90"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#111827] via-[#111827]/60 to-black/30" />
@@ -75,10 +75,10 @@ export default function LoginPage() {
             {/* Top Brand Header */}
             <div className="relative z-10 space-y-1">
               <span className="font-serif text-2xl tracking-[0.2em] font-semibold block text-white">
-                ZURIELLE
+                FASHION HOUSE
               </span>
               <span className="text-[9px] tracking-[0.3em] text-[#991B1B] uppercase font-bold block">
-                Atelier Couture
+                Sialkot Couture
               </span>
             </div>
 
@@ -111,7 +111,7 @@ export default function LoginPage() {
 
             {/* Bottom Footer Note */}
             <div className="relative z-10 text-[10px] text-gray-400 tracking-wider">
-              &copy; {new Date().getFullYear()} Zurielle Atelier. All rights reserved.
+              &copy; {new Date().getFullYear()} Fashion House Sialkot. All rights reserved.
             </div>
           </div>
 

@@ -24,7 +24,7 @@ export default function AnnouncementBar() {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <div className="hidden md:flex items-center gap-2 text-white font-medium">
           <span className="w-1.5 h-1.5 rounded-full bg-[#991B1B] animate-pulse"></span>
-          <span>ATELIER COUTURE LAHORE</span>
+          <span>FASHION HOUSE SIALKOT</span>
         </div>
 
         <div className="flex-1 flex items-center justify-center gap-2 text-center transition-all duration-500">
@@ -35,9 +35,9 @@ export default function AnnouncementBar() {
         </div>
 
         <div className="hidden md:flex items-center gap-4 text-[11px] text-white/70">
-          <span>HELPLINE: +92 42 3575 8899</span>
+          <span>HELPLINE: +92 52 4567 890</span>
           <span>|</span>
-          <span className="text-white hover:text-white transition">ONLINE VIP CONCIERGE</span>
+          <span className="text-white hover:text-white transition">ONLINE BRIDAL CONCIERGE</span>
         </div>
       </div>
     </div>

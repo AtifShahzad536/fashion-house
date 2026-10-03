@@ -52,9 +52,9 @@ export default function MobileMenuDrawer() {
           <div className="p-5 border-b border-gray-200 flex items-center justify-between bg-[#F9FAFB]">
             <div>
               <span className="font-serif text-lg tracking-widest text-[#111827] font-semibold uppercase block">
-                ZURIELLE
+                FASHION HOUSE
               </span>
-              <span className="text-[10px] tracking-luxury text-[#991B1B] uppercase font-semibold">Atelier Couture</span>
+              <span className="text-[10px] tracking-luxury text-[#991B1B] uppercase font-semibold">Sialkot Couture</span>
             </div>
             <button
               onClick={() => dispatch(toggleMobileMenu(false))}

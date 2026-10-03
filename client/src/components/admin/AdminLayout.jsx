@@ -83,11 +83,11 @@ export default function AdminLayout({ children }) {
           {/* Logo Header */}
           <div className="p-6 border-b border-[#2D2825] flex items-center justify-between">
             <div>
-              <span className="font-serif text-xl tracking-[0.2em] text-white font-semibold block">
-                ZURIELLE
+              <span className="font-serif text-lg tracking-[0.14em] text-white font-semibold block">
+                FASHION HOUSE
               </span>
-              <span className="text-[10px] tracking-widest text-bridal-gold uppercase block font-semibold">
-                Admin Control Atelier
+              <span className="text-[9px] tracking-widest text-bridal-gold uppercase block font-semibold">
+                Sialkot Admin Portal
               </span>
             </div>
             <button

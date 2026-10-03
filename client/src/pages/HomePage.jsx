@@ -52,10 +52,10 @@ export default function HomePage() {
   return (
     <>
       <Helmet>
-        <title>ZURIELLE ATELIER | Luxury Bridal & Designer Lehenga Couture</title>
+        <title>Fashion House Sialkot | Luxury Bridal & Designer Lehenga Couture</title>
         <meta
           name="description"
-          content="Heirloom handcrafted bridal lehengas, made-to-measure wedding couture, and interactive 3D bespoke customizer in pure raw silk, velvet, and organza."
+          content="Heirloom handcrafted bridal lehengas, made-to-measure wedding couture, and interactive 3D bespoke customizer by Fashion House Sialkot."
         />
       </Helmet>
 

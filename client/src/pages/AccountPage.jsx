@@ -143,7 +143,7 @@ export default function AccountPage() {
   return (
     <>
       <Helmet>
-        <title>My Bridal Account | ZURIELLE ATELIER</title>
+        <title>My Bridal Account | Fashion House Sialkot</title>
       </Helmet>
 
       <div className="bg-bridal-ivory min-h-screen pb-24">

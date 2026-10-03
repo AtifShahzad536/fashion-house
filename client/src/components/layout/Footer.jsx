@@ -10,30 +10,30 @@ export default function Footer() {
           {/* Col 1 & 2: Brand Heritage */}
           <div className="lg:col-span-2 space-y-4">
             <Link to="/" className="inline-block">
-              <span className="font-serif text-2xl tracking-[0.25em] text-white font-semibold block">
-                ZURIELLE
+              <span className="font-serif text-2xl tracking-[0.2em] text-white font-semibold block">
+                FASHION HOUSE
               </span>
               <span className="text-[10px] tracking-[0.35em] text-[#991B1B] uppercase font-semibold block -mt-0.5">
-                Atelier Couture Lahore
+                Sialkot Couture
               </span>
             </Link>
 
             <p className="text-xs text-gray-400 leading-relaxed max-w-sm font-light">
-              Purveyors of heirloom South Asian bridal couture, bespoke hand-embroidered lehengas, and made-to-measure wedding trousseaus crafted with generational Mughal mastery.
+              Purveyors of heirloom South Asian bridal couture, bespoke hand-embroidered lehengas, and made-to-measure wedding trousseaus crafted with generational master artisans from Sialkot.
             </p>
 
             <div className="space-y-2.5 text-xs">
               <div className="flex items-center gap-2 text-gray-400">
                 <MapPin size={14} className="flex-shrink-0 text-[#991B1B]" />
-                <span>Flagship Atelier: MM Alam Road, Gulberg III, Lahore</span>
+                <span>Flagship Studio: Paris Road / Defence Road, Sialkot, Pakistan</span>
               </div>
               <div className="flex items-center gap-2 text-gray-400">
                 <Phone size={14} className="flex-shrink-0 text-[#991B1B]" />
-                <span>VIP Concierge: +92 42 3575 8899</span>
+                <span>Concierge: +92 52 4567 890 / +92 300 8765432</span>
               </div>
               <div className="flex items-center gap-2 text-gray-400">
                 <Mail size={14} className="flex-shrink-0 text-[#991B1B]" />
-                <span>Inquiries: couture@zurielleatelier.com</span>
+                <span>Inquiries: info@fashionhousesialkot.com</span>
               </div>
             </div>
           </div>
@@ -142,12 +142,12 @@ export default function Footer() {
 
         {/* Bottom Bar: Copyright & Global Locations */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
-          <p>© {new Date().getFullYear()} ZURIELLE ATELIER COUTURE. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} FASHION HOUSE SIALKOT. All rights reserved.</p>
 
           <div className="flex items-center gap-6 text-[11px] text-gray-400 font-medium tracking-wider">
-            <span>LAHORE ATELIER</span>
+            <span>SIALKOT FLAGSHIP</span>
             <span>•</span>
-            <span>LONDON VIP SUITE</span>
+            <span>LAHORE SUITE</span>
             <span>•</span>
             <span>DUBAI CONCIERGE</span>
           </div>
