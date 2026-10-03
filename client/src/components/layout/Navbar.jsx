@@ -315,13 +315,21 @@ export default function Navbar() {
                   )}
                 </div>
               ) : (
-                <Link
-                  to="/login"
-                  className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-[#111827] hover:text-[#991B1B] hover:bg-[#F3F4F6] rounded-[6px] border border-gray-200 transition"
-                >
-                  <UserIcon size={15} />
-                  <span className="hidden sm:inline">Sign In</span>
-                </Link>
+                <div className="flex items-center gap-2">
+                  <Link
+                    to="/login"
+                    className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-[#111827] hover:text-[#991B1B] hover:bg-[#F3F4F6] rounded-[4px] border border-gray-200 transition"
+                  >
+                    <UserIcon size={14} />
+                    <span>Sign In</span>
+                  </Link>
+                  <Link
+                    to="/register"
+                    className="hidden sm:inline-flex items-center gap-1 px-3 py-1.5 text-xs font-semibold bg-[#111827] hover:bg-[#991B1B] text-white rounded-[4px] shadow-sm transition"
+                  >
+                    <span>Register</span>
+                  </Link>
+                </div>
               )}
             </div>
           </div>

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { Helmet } from 'react-helmet-async';
-import { Sparkles, Mail, Lock, ArrowRight, ShieldCheck, User } from 'lucide-react';
+import { Sparkles, Mail, Lock, ArrowRight, User } from 'lucide-react';
 import { setCredentials, setLoading, setError } from '../redux/slices/authSlice.js';
 import api from '../services/api.js';
 import toast from 'react-hot-toast';
@@ -14,7 +14,7 @@ export default function LoginPage() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const { loading, error } = useSelector((state) => state.auth);
+  const { loading } = useSelector((state) => state.auth);
   const redirect = new URLSearchParams(location.search).get('redirect') || '/account';
 
   const handleLogin = async (e) => {
@@ -43,34 +43,27 @@ export default function LoginPage() {
     }
   };
 
-  const handleQuickFillCustomer = () => {
-    setEmail('ayesha@gmail.com');
-    setPassword('customer123password');
-  };
-
-  const handleQuickFillAdmin = () => {
-    setEmail('admin@zurielle.com');
-    setPassword('admin12345password');
-  };
-
   return (
     <>
       <Helmet>
         <title>Client Sign In | ZURIELLE ATELIER</title>
-        <meta name="description" content="Sign in to your Zurielle Atelier bridal account to view orders, saved custom designs, and fitting measurements." />
+        <meta
+          name="description"
+          content="Sign in to your Zurielle Atelier bridal account to view orders, saved custom designs, and fitting measurements."
+        />
       </Helmet>
 
-      <div className="min-h-[80vh] bg-bridal-ivory py-16 px-4 flex items-center justify-center">
-        <div className="w-full max-w-md bg-white border border-bridal-border rounded-card shadow-luxury-lg p-8 sm:p-10 space-y-6">
+      <div className="min-h-[85vh] bg-[#FAF8F5] py-16 px-4 flex items-center justify-center">
+        <div className="w-full max-w-md bg-white border border-gray-200 rounded-[4px] shadow-sm p-8 sm:p-10 space-y-6">
           {/* Header */}
           <div className="text-center space-y-2">
-            <span className="text-[10px] uppercase tracking-[0.3em] text-bridal-gold font-semibold block">
+            <span className="text-[10px] uppercase tracking-[0.3em] text-[#991B1B] font-semibold block">
               VIP Client Portal
             </span>
-            <h1 className="font-serif text-2xl sm:text-3xl text-bridal-charcoal font-normal">
+            <h1 className="font-serif text-2xl sm:text-3xl text-[#111827] font-normal">
               Sign In to Your Account
             </h1>
-            <p className="text-xs text-bridal-mutedText">
+            <p className="text-xs text-gray-500">
               Access your saved bespoke lehenga designs and live order tracking.
             </p>
           </div>
@@ -78,17 +71,17 @@ export default function LoginPage() {
           {/* Form */}
           <form onSubmit={handleLogin} className="space-y-4">
             <div className="space-y-1">
-              <label className="text-xs font-semibold uppercase tracking-wider text-bridal-charcoal block">
+              <label className="text-xs font-semibold uppercase tracking-wider text-[#111827] block">
                 Email Address
               </label>
               <div className="relative">
-                <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-bridal-lightText" />
+                <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="name@domain.com"
-                  className="w-full pl-10 pr-4 py-3 bg-bridal-cream/30 border border-bridal-border rounded-input text-xs text-bridal-charcoal focus:outline-none focus:border-bridal-gold"
+                  className="w-full pl-10 pr-4 py-3 bg-[#F9FAFB] border border-gray-200 rounded-[4px] text-xs text-[#111827] focus:outline-none focus:border-[#111827] transition"
                   required
                 />
               </div>
@@ -96,21 +89,25 @@ export default function LoginPage() {
 
             <div className="space-y-1">
               <div className="flex justify-between items-center">
-                <label className="text-xs font-semibold uppercase tracking-wider text-bridal-charcoal block">
+                <label className="text-xs font-semibold uppercase tracking-wider text-[#111827] block">
                   Password
                 </label>
-                <a href="#forgot" onClick={() => toast('Password reset link has been dispatched to your email.', { icon: '📧' })} className="text-[11px] text-bridal-gold hover:underline">
+                <button
+                  type="button"
+                  onClick={() => toast('Password reset link has been dispatched to your email.', { icon: '📧' })}
+                  className="text-[11px] text-[#991B1B] hover:underline"
+                >
                   Forgot?
-                </a>
+                </button>
               </div>
               <div className="relative">
-                <Lock className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-bridal-lightText" />
+                <Lock className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                 <input
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="••••••••"
-                  className="w-full pl-10 pr-4 py-3 bg-bridal-cream/30 border border-bridal-border rounded-input text-xs text-bridal-charcoal focus:outline-none focus:border-bridal-gold"
+                  className="w-full pl-10 pr-4 py-3 bg-[#F9FAFB] border border-gray-200 rounded-[4px] text-xs text-[#111827] focus:outline-none focus:border-[#111827] transition"
                   required
                 />
               </div>
@@ -119,42 +116,17 @@ export default function LoginPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-3.5 bg-bridal-charcoal hover:bg-black text-white text-xs font-semibold uppercase tracking-widest rounded-btn shadow-md transition flex items-center justify-center gap-2 disabled:opacity-50"
+              className="w-full py-3.5 bg-[#111827] hover:bg-[#991B1B] text-white text-xs font-semibold uppercase tracking-widest rounded-[4px] shadow-sm transition flex items-center justify-center gap-2 disabled:opacity-50 mt-2"
             >
               {loading ? 'Authenticating...' : 'Sign In to Atelier'}
               <ArrowRight size={14} />
             </button>
           </form>
 
-          {/* Quick Demo Credentials Fill Buttons */}
-          <div className="pt-2 border-t border-bridal-border space-y-2">
-            <span className="text-[10px] text-bridal-lightText font-semibold uppercase tracking-wider block text-center">
-              Quick Test Autofill
-            </span>
-            <div className="grid grid-cols-2 gap-2">
-              <button
-                type="button"
-                onClick={handleQuickFillCustomer}
-                className="py-2 px-2 bg-bridal-cream/60 hover:bg-bridal-sand border border-bridal-border rounded-md text-[11px] font-medium text-bridal-charcoal transition flex items-center justify-center gap-1"
-              >
-                <User size={12} className="text-bridal-gold" />
-                <span>Bride Client</span>
-              </button>
-              <button
-                type="button"
-                onClick={handleQuickFillAdmin}
-                className="py-2 px-2 bg-bridal-cream/60 hover:bg-bridal-sand border border-bridal-border rounded-md text-[11px] font-medium text-bridal-charcoal transition flex items-center justify-center gap-1"
-              >
-                <ShieldCheck size={12} className="text-bridal-gold" />
-                <span>Admin Portal</span>
-              </button>
-            </div>
-          </div>
-
           {/* Register Prompt */}
-          <div className="text-center pt-2 text-xs text-bridal-mutedText">
+          <div className="text-center pt-4 text-xs text-gray-500 border-t border-gray-100">
             <span>New to Zurielle Atelier? </span>
-            <Link to={`/register?redirect=${redirect}`} className="text-bridal-deepGold font-semibold hover:underline">
+            <Link to={`/register?redirect=${redirect}`} className="text-[#991B1B] font-semibold hover:underline">
               Create VIP Account
             </Link>
           </div>
