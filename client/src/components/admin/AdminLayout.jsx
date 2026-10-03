@@ -20,6 +20,8 @@ import {
 } from 'lucide-react';
 import { logout } from '../../redux/slices/authSlice.js';
 
+import { ADMIN_BASE_PATH } from '../../constants/theme.js';
+
 export default function AdminLayout({ children }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -36,8 +38,8 @@ export default function AdminLayout({ children }) {
           You must be logged in as an authorized Atelier Administrator to access this portal.
         </p>
         <Link
-          to="/login?redirect=/admin"
-          className="px-6 py-2.5 bg-[#111827] text-white text-xs font-semibold uppercase tracking-wider rounded-[6px]"
+          to={`/login?redirect=${ADMIN_BASE_PATH}`}
+          className="px-6 py-2.5 bg-[#111827] text-white text-xs font-semibold uppercase tracking-wider rounded-[4px]"
         >
           Sign In with Admin Account
         </Link>
@@ -46,14 +48,14 @@ export default function AdminLayout({ children }) {
   }
 
   const navItems = [
-    { name: 'Dashboard Overview', path: '/admin', icon: LayoutDashboard, exact: true },
-    { name: 'Product Inventory', path: '/admin/products', icon: Shirt },
-    { name: 'Add New Lehenga', path: '/admin/products/new', icon: Sparkles },
-    { name: 'Discount Campaigns', path: '/admin/discounts', icon: Percent },
-    { name: 'Hero Social Icons', path: '/admin/social-links', icon: Share2 },
-    { name: 'Bridal Orders Queue', path: '/admin/orders', icon: ShoppingBag },
-    { name: 'Hero Slider CMS', path: '/admin/hero-slides', icon: ImageIcon },
-    { name: 'Coupons & Vouchers', path: '/admin/coupons', icon: Tag },
+    { name: 'Dashboard Overview', path: ADMIN_BASE_PATH, icon: LayoutDashboard, exact: true },
+    { name: 'Product Inventory', path: `${ADMIN_BASE_PATH}/products`, icon: Shirt },
+    { name: 'Add New Lehenga', path: `${ADMIN_BASE_PATH}/products/new`, icon: Sparkles },
+    { name: 'Discount Campaigns', path: `${ADMIN_BASE_PATH}/discounts`, icon: Percent },
+    { name: 'Hero Social Icons', path: `${ADMIN_BASE_PATH}/social-links`, icon: Share2 },
+    { name: 'Bridal Orders Queue', path: `${ADMIN_BASE_PATH}/orders`, icon: ShoppingBag },
+    { name: 'Hero Slider CMS', path: `${ADMIN_BASE_PATH}/hero-slides`, icon: ImageIcon },
+    { name: 'Coupons & Vouchers', path: `${ADMIN_BASE_PATH}/coupons`, icon: Tag },
   ];
 
   const handleLogout = () => {

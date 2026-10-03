@@ -23,6 +23,7 @@ import { logout, setCredentials } from '../redux/slices/authSlice.js';
 import { addToCart } from '../redux/slices/cartSlice.js';
 import { removeFromWishlist } from '../redux/slices/wishlistSlice.js';
 import api from '../services/api.js';
+import { ADMIN_BASE_PATH } from '../constants/theme.js';
 import toast from 'react-hot-toast';
 
 export default function AccountPage() {
@@ -209,10 +210,10 @@ export default function AccountPage() {
                 {userInfo?.role === 'admin' && (
                   <div className="pt-2 mt-2 border-t border-bridal-border">
                     <Link
-                      to="/admin"
-                      className="w-full flex items-center gap-2.5 px-4 py-3 rounded-btn text-xs font-semibold bg-bridal-gold/15 text-bridal-deepGold hover:bg-bridal-gold/25 transition"
+                      to={ADMIN_BASE_PATH}
+                      className="w-full flex items-center gap-2.5 px-4 py-3 rounded-[4px] text-xs font-semibold bg-[#111827] text-white hover:bg-black transition"
                     >
-                      <ShieldCheck size={15} />
+                      <ShieldCheck size={15} className="text-[#991B1B]" />
                       <span>Switch to Admin Panel</span>
                     </Link>
                   </div>

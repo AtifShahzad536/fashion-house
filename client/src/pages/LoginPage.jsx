@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Helmet } from 'react-helmet-async';
 import { Sparkles, Mail, Lock, ArrowRight, User } from 'lucide-react';
 import { setCredentials, setLoading, setError } from '../redux/slices/authSlice.js';
+import { ADMIN_BASE_PATH } from '../constants/theme.js';
 import api from '../services/api.js';
 import toast from 'react-hot-toast';
 
@@ -31,7 +32,7 @@ export default function LoginPage() {
         dispatch(setCredentials(data.data));
         toast.success(`Welcome back to Zurielle Atelier, ${data.data.name}!`);
         if (data.data.role === 'admin' && redirect === '/account') {
-          navigate('/admin');
+          navigate(ADMIN_BASE_PATH);
         } else {
           navigate(redirect);
         }

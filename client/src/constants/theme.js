@@ -3,6 +3,8 @@
  * Royal Bridal Atelier - Zurielle
  */
 
+export const ADMIN_BASE_PATH = '/zurielle-atelier-portal-2026';
+
 export const THEME = {
   colors: {
     // Primary Clean Luxury Palette (No yellow cream/sand)

@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { X, Sparkles, Heart, ShoppingBag, User, ShieldCheck, ChevronRight, ChevronDown, Phone } from 'lucide-react';
 import { toggleMobileMenu } from '../../redux/slices/uiSlice.js';
 import { logout } from '../../redux/slices/authSlice.js';
+import { ADMIN_BASE_PATH } from '../../constants/theme.js';
 
 export default function MobileMenuDrawer() {
   const dispatch = useDispatch();
@@ -273,7 +274,7 @@ export default function MobileMenuDrawer() {
             {userInfo?.role === 'admin' && (
               <div className="pt-3 mt-3 border-t border-gray-200">
                 <button
-                  onClick={() => handleNavClick('/admin')}
+                  onClick={() => handleNavClick(ADMIN_BASE_PATH)}
                   className="w-full flex items-center gap-2 px-3 py-2.5 rounded-[4px] text-xs font-semibold bg-[#111827] text-white hover:bg-black transition"
                 >
                   <ShieldCheck size={14} className="text-[#991B1B]" />

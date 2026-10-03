@@ -32,12 +32,14 @@ import AdminSocialLinksPage from './pages/admin/AdminSocialLinksPage.jsx';
 import AdminOrdersPage from './pages/admin/AdminOrdersPage.jsx';
 import AdminCMSPage from './pages/admin/AdminCMSPage.jsx';
 
+import { ADMIN_BASE_PATH } from './constants/theme.js';
+
 export default function App() {
   return (
     <Routes>
-      {/* Admin Panel Protected Nested Routes (Custom Layout without Storefront Header/Footer) */}
+      {/* Admin Panel Protected Nested Routes with Unique Secure Path */}
       <Route
-        path="/admin"
+        path={ADMIN_BASE_PATH}
         element={
           <AdminLayout>
             <AdminDashboardPage />
@@ -45,7 +47,7 @@ export default function App() {
         }
       />
       <Route
-        path="/admin/products"
+        path={`${ADMIN_BASE_PATH}/products`}
         element={
           <AdminLayout>
             <AdminProductsPage />
@@ -53,7 +55,7 @@ export default function App() {
         }
       />
       <Route
-        path="/admin/products/new"
+        path={`${ADMIN_BASE_PATH}/products/new`}
         element={
           <AdminLayout>
             <AdminProductEditPage />
@@ -61,7 +63,7 @@ export default function App() {
         }
       />
       <Route
-        path="/admin/products/edit/:id"
+        path={`${ADMIN_BASE_PATH}/products/edit/:id`}
         element={
           <AdminLayout>
             <AdminProductEditPage />
@@ -69,7 +71,7 @@ export default function App() {
         }
       />
       <Route
-        path="/admin/discounts"
+        path={`${ADMIN_BASE_PATH}/discounts`}
         element={
           <AdminLayout>
             <AdminDiscountPage />
@@ -77,7 +79,7 @@ export default function App() {
         }
       />
       <Route
-        path="/admin/social-links"
+        path={`${ADMIN_BASE_PATH}/social-links`}
         element={
           <AdminLayout>
             <AdminSocialLinksPage />
@@ -85,7 +87,7 @@ export default function App() {
         }
       />
       <Route
-        path="/admin/orders"
+        path={`${ADMIN_BASE_PATH}/orders`}
         element={
           <AdminLayout>
             <AdminOrdersPage />
@@ -93,7 +95,7 @@ export default function App() {
         }
       />
       <Route
-        path="/admin/hero-slides"
+        path={`${ADMIN_BASE_PATH}/hero-slides`}
         element={
           <AdminLayout>
             <AdminCMSPage />
@@ -101,7 +103,7 @@ export default function App() {
         }
       />
       <Route
-        path="/admin/coupons"
+        path={`${ADMIN_BASE_PATH}/coupons`}
         element={
           <AdminLayout>
             <AdminCMSPage />

@@ -21,6 +21,7 @@ import {
 } from '../../redux/slices/uiSlice.js';
 import { toggleCartDrawer } from '../../redux/slices/cartSlice.js';
 import { logout } from '../../redux/slices/authSlice.js';
+import { ADMIN_BASE_PATH } from '../../constants/theme.js';
 
 export default function Navbar() {
   const dispatch = useDispatch();
@@ -275,7 +276,7 @@ export default function Navbar() {
 
                       {userInfo.role === 'admin' && (
                         <Link
-                          to="/admin"
+                          to={ADMIN_BASE_PATH}
                           onClick={() => setUserDropdownOpen(false)}
                           className="flex items-center gap-2.5 px-4 py-2 hover:bg-[#F3F4F6] text-[#111827] font-semibold"
                         >
